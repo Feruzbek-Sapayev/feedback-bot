@@ -277,6 +277,7 @@ async def handle_group_reply(message: types.Message):
         application = db.select_application(reply_message.message_id)
         if application:
             user_id = application[1]
+            await message.answer(f"<b>Сизнинг №{application[0]} сонли мурожаатингиз учун жавоб келди:</b>", parse_mode='html')
             msg = await message.send_copy(chat_id=user_id, reply_markup=get_reply_btn(message.from_user.id, application[2], application[0]))
             db.add_app_message(application[0], msg.message_id, message.from_user.id)
         else:
