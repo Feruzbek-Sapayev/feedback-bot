@@ -20,7 +20,7 @@ from db import DataBase as db
 from aiogram.enums.chat_type import ChatType
 
 
-TOKEN = "7716250999:AAFEvn0fZdeK_1zSnYqhfwb918URZwEcXKA"
+TOKEN = "7716250999:AAGVucoUyH03cc0WQHKI8LiJa_0ymBH_XTg"
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 
@@ -85,6 +85,7 @@ exit_btn = ReplyKeyboardMarkup(resize_keyboard=True, keyboard=[
 
 @dp.message(CommandStart())
 async def command_start_handler(message: Message, state: FSMContext) -> None:
+    print(message.chat.id)
     user = db.select_user(message.from_user.id)
     if user is None:
         db.add_user(message.from_user.id)
