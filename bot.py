@@ -20,7 +20,7 @@ from db import DataBase as db
 from aiogram.enums.chat_type import ChatType
 
 
-TOKEN = "7266604018:AAFDuWe1m53zr2xPEXGmn-EaA_03v82KLbw"
+TOKEN = "7716250999:AAFEvn0fZdeK_1zSnYqhfwb918URZwEcXKA"
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 
@@ -61,7 +61,7 @@ def get_apps_btn(applications):
 
 def get_answer_btn(msg_id):
     markup = InlineKeyboardMarkup(inline_keyboard=[
-        [InlineKeyboardButton(text="Жавоб ёзиш", url=f"https://t.me/c/2016986216/{msg_id}")],
+        [InlineKeyboardButton(text="Жавоб ёзиш", url=f"https://t.me/c/4500975902/{msg_id}")],
     ])
     return markup
 
@@ -234,7 +234,7 @@ async def suggestions_handler(message: Message, state: FSMContext):
             media = user_data['media']
             suggestions = user_data['suggestions']
 
-            group_chat_id = '-1002016986216'
+            group_chat_id = '-4500975902'
             db.add_application(message.from_user.id, 0)  #application yaratamiz
             app = db.select_application_by_user(message.from_user.id, 0)
             feedback_message = (
