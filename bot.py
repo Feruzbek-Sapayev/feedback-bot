@@ -18,9 +18,11 @@ from aiogram.types.reply_keyboard_remove import ReplyKeyboardRemove
 from aiogram.types.keyboard_button import KeyboardButton
 from db import DataBase as db
 from aiogram.enums.chat_type import ChatType
+from dotenv import load_dotenv
 
 
-TOKEN = "7716250999:AAGVucoUyH03cc0WQHKI8LiJa_0ymBH_XTg"
+load_dotenv()
+TOKEN = getenv("BOT_TOKEN")
 bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
 dp = Dispatcher()
 
